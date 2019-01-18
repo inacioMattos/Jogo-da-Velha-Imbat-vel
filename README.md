@@ -6,6 +6,7 @@ Um jogo da velha que nunca perde. Feito em pascal e utilizando AI (Artificial In
 Utilizei da base de algoritmos de busca em grafo pra implementar essa solução, o que foi um desafio bem grande, considerando que Pascal é bem *exótico*, e também essa havia sido minha primeira vez com algoritmos de busca.
 
 Desenvolvido em 2017.
+
 PS: Duvido você ganhar dele!
 
 
