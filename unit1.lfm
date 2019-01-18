@@ -1,0 +1,596 @@
+object Form1: TForm1
+  Left = 403
+  Height = 602
+  Top = 120
+  Width = 688
+  BorderStyle = bsSingle
+  Caption = 'tic tac toezinho aehoo'
+  ClientHeight = 602
+  ClientWidth = 688
+  Color = 11882815
+  OnCreate = FormCreate
+  OnPaint = FormPaint
+  LCLVersion = '1.6.4.0'
+  object panelInicio: TPanel
+    Left = 0
+    Height = 602
+    Top = 0
+    Width = 689
+    BevelOuter = bvNone
+    ClientHeight = 602
+    ClientWidth = 689
+    ParentShowHint = False
+    TabOrder = 0
+    object btnVsCPU: TButton
+      Left = 224
+      Height = 75
+      Top = 224
+      Width = 256
+      Caption = 'jogar sozinho'
+      Color = clMenuHighlight
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clLime
+      Font.Height = -35
+      Font.Name = 'Bebas Neue'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      OnClick = btnVsCPUClick
+      ParentFont = False
+      TabOrder = 0
+    end
+    object btnVsP2: TButton
+      Left = 224
+      Height = 73
+      Top = 320
+      Width = 256
+      Caption = 'contra um amigo'
+      Font.CharSet = ANSI_CHARSET
+      Font.Height = -35
+      Font.Name = 'Bebas Neue'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      OnClick = btnVsP2Click
+      ParentFont = False
+      TabOrder = 1
+    end
+    object lWelcome: TLabel
+      Left = 176
+      Height = 85
+      Top = 76
+      Width = 383
+      Caption = 'Jogo da Velha'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = 16448250
+      Font.Height = -85
+      Font.Name = 'Mission Script'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      ParentColor = False
+      ParentFont = False
+    end
+    object btnOnline: TButton
+      Left = 592
+      Height = 25
+      Top = 560
+      Width = 75
+      Caption = 'online'
+      Enabled = False
+      TabOrder = 2
+    end
+    object btnOptions: TButton
+      Left = 488
+      Height = 25
+      Top = 560
+      Width = 75
+      Caption = 'opções'
+      Enabled = False
+      OnClick = btnOptionsClick
+      TabOrder = 3
+    end
+  end
+  object panelGame: TPanel
+    Left = 999
+    Height = 600
+    Top = 0
+    Width = 688
+    BevelOuter = bvNone
+    ClientHeight = 600
+    ClientWidth = 688
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -13
+    Font.Name = 'DK Running Hipster'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentFont = False
+    TabOrder = 1
+    Visible = False
+    object Shape2: TShape
+      Left = 296
+      Height = 128
+      Top = 152
+      Width = 128
+      Brush.Color = 16448250
+      Pen.Color = clGreen
+      Pen.Style = psClear
+      Pen.Width = 0
+      OnMouseDown = Shape2MouseDown
+      OnMouseEnter = Shape2MouseEnter
+      OnMouseLeave = Shape2MouseLeave
+      Shape = stRoundRect
+    end
+    object Shape3: TShape
+      Left = 440
+      Height = 128
+      Top = 152
+      Width = 128
+      Brush.Color = 16448250
+      Pen.Color = clGreen
+      Pen.Style = psClear
+      Pen.Width = 0
+      OnMouseDown = Shape3MouseDown
+      OnMouseEnter = Shape3MouseEnter
+      OnMouseLeave = Shape3MouseLeave
+      Shape = stRoundRect
+    end
+    object Shape1: TShape
+      Left = 152
+      Height = 128
+      Top = 152
+      Width = 128
+      Brush.Color = 16448250
+      Pen.Color = clGreen
+      Pen.Style = psClear
+      Pen.Width = 0
+      OnChangeBounds = Shape1ChangeBounds
+      OnMouseDown = Shape1MouseDown
+      OnMouseEnter = Shape1MouseEnter
+      OnMouseLeave = Shape1MouseLeave
+      Shape = stRoundRect
+    end
+    object Label2: TLabel
+      Left = 336
+      Height = 94
+      Top = 168
+      Width = 46
+      Caption = 'X'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -85
+      Font.Name = 'DK Honeyguide Caps'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      ParentColor = False
+      ParentFont = False
+      Visible = False
+    end
+    object Shape6: TShape
+      Left = 440
+      Height = 128
+      Top = 296
+      Width = 128
+      Brush.Color = 16448250
+      Pen.Color = clGreen
+      Pen.Style = psClear
+      Pen.Width = 0
+      OnMouseDown = Shape6MouseDown
+      OnMouseEnter = Shape6MouseEnter
+      OnMouseLeave = Shape6MouseLeave
+      Shape = stRoundRect
+    end
+    object Shape5: TShape
+      Left = 296
+      Height = 128
+      Top = 296
+      Width = 128
+      Brush.Color = 16448250
+      Pen.Color = clGreen
+      Pen.Style = psClear
+      Pen.Width = 0
+      OnMouseDown = Shape5MouseDown
+      OnMouseEnter = Shape5MouseEnter
+      OnMouseLeave = Shape5MouseLeave
+      Shape = stRoundRect
+    end
+    object Shape4: TShape
+      AnchorSideLeft.Control = panelGame
+      AnchorSideLeft.Side = asrCenter
+      AnchorSideTop.Control = panelGame
+      AnchorSideRight.Control = panelGame
+      AnchorSideRight.Side = asrCenter
+      AnchorSideBottom.Control = panelGame
+      AnchorSideBottom.Side = asrBottom
+      Left = 154
+      Height = 128
+      Top = 296
+      Width = 128
+      Anchors = []
+      BorderSpacing.Top = 224
+      BorderSpacing.Bottom = 242
+      Brush.Color = 8470783
+      Pen.Color = clGreen
+      Pen.Style = psClear
+      Pen.Width = 0
+      OnMouseDown = Shape4MouseDown
+      OnMouseEnter = Shape4MouseEnter
+      OnMouseLeave = Shape4MouseLeave
+      OnPaint = Shape4Paint
+      Shape = stRoundRect
+    end
+    object Shape9: TShape
+      Left = 440
+      Height = 128
+      Top = 440
+      Width = 128
+      Brush.Color = 16448250
+      Pen.Color = clGreen
+      Pen.Style = psClear
+      Pen.Width = 0
+      OnMouseDown = Shape9MouseDown
+      OnMouseEnter = Shape9MouseEnter
+      OnMouseLeave = Shape9MouseLeave
+      Shape = stRoundRect
+    end
+    object Shape8: TShape
+      Left = 296
+      Height = 128
+      Top = 440
+      Width = 128
+      Brush.Color = 16448250
+      Pen.Color = clGreen
+      Pen.Style = psClear
+      Pen.Width = 0
+      OnMouseDown = Shape8MouseDown
+      OnMouseEnter = Shape8MouseEnter
+      OnMouseLeave = Shape8MouseLeave
+      Shape = stRoundRect
+    end
+    object Shape7: TShape
+      Left = 152
+      Height = 128
+      Top = 440
+      Width = 128
+      Brush.Color = 16448250
+      Pen.Color = clGreen
+      Pen.Style = psClear
+      Pen.Width = 0
+      OnMouseDown = Shape7MouseDown
+      OnMouseEnter = Shape7MouseEnter
+      OnMouseLeave = Shape7MouseLeave
+      Shape = stRoundRect
+    end
+    object Label1: TLabel
+      Left = 192
+      Height = 94
+      Top = 176
+      Width = 48
+      Caption = 'O'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = 5287756
+      Font.Height = -85
+      Font.Name = 'DK Honeyguide Caps'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      ParentColor = False
+      ParentFont = False
+      Visible = False
+    end
+    object Label3: TLabel
+      Left = 336
+      Height = 94
+      Top = 168
+      Width = 46
+      Caption = 'X'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = 8951296
+      Font.Height = -85
+      Font.Name = 'DK Honeyguide Caps'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      ParentColor = False
+      ParentFont = False
+      Visible = False
+    end
+    object Label4: TLabel
+      Left = 364
+      Height = 94
+      Top = 196
+      Width = 46
+      Caption = 'X'
+      Font.CharSet = ANSI_CHARSET
+      Font.Height = -85
+      Font.Name = 'DK Honeyguide Caps'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      ParentColor = False
+      ParentFont = False
+      Visible = False
+    end
+    object Label5: TLabel
+      Left = 392
+      Height = 94
+      Top = 224
+      Width = 46
+      Caption = 'X'
+      Font.CharSet = ANSI_CHARSET
+      Font.Height = -85
+      Font.Name = 'DK Honeyguide Caps'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      ParentColor = False
+      ParentFont = False
+      Visible = False
+    end
+    object Label6: TLabel
+      Left = 420
+      Height = 94
+      Top = 252
+      Width = 46
+      Caption = 'X'
+      Font.CharSet = ANSI_CHARSET
+      Font.Height = -85
+      Font.Name = 'DK Honeyguide Caps'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      ParentColor = False
+      ParentFont = False
+      Visible = False
+    end
+    object Label7: TLabel
+      Left = 448
+      Height = 94
+      Top = 280
+      Width = 46
+      Caption = 'X'
+      Font.CharSet = ANSI_CHARSET
+      Font.Height = -85
+      Font.Name = 'DK Honeyguide Caps'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      ParentColor = False
+      ParentFont = False
+      Visible = False
+    end
+    object Label8: TLabel
+      Left = 476
+      Height = 94
+      Top = 308
+      Width = 46
+      Caption = 'X'
+      Font.CharSet = ANSI_CHARSET
+      Font.Height = -85
+      Font.Name = 'DK Honeyguide Caps'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      ParentColor = False
+      ParentFont = False
+      Visible = False
+    end
+    object Label9: TLabel
+      Left = 504
+      Height = 94
+      Top = 336
+      Width = 46
+      Caption = 'X'
+      Font.CharSet = ANSI_CHARSET
+      Font.Height = -85
+      Font.Name = 'DK Honeyguide Caps'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      ParentColor = False
+      ParentFont = False
+      Visible = False
+    end
+    object Shape10: TShape
+      Left = -24
+      Height = 128
+      Top = 0
+      Width = 738
+      Brush.Color = 15236213
+      Pen.Style = psClear
+      Pen.Width = 0
+    end
+    object libe: TLabel
+      Left = 88
+      Height = 59
+      Top = 16
+      Width = 42
+      Caption = 'P1'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = 16448250
+      Font.Height = -59
+      Font.Name = 'Mission Script'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      ParentColor = False
+      ParentFont = False
+    end
+    object lScoreP1: TLabel
+      Left = 101
+      Height = 44
+      Top = 85
+      Width = 15
+      Caption = '0'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = 16448250
+      Font.Height = -37
+      Font.Name = 'Bebas Neue'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      ParentColor = False
+      ParentFont = False
+    end
+    object Shape11: TShape
+      Left = 64
+      Height = 4
+      Top = 76
+      Width = 88
+      Pen.Style = psClear
+    end
+    object libe1: TLabel
+      Left = 312
+      Height = 53
+      Top = 16
+      Width = 129
+      Caption = 'Empates'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = 16448250
+      Font.Height = -53
+      Font.Name = 'Mission Script'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      ParentColor = False
+      ParentFont = False
+    end
+    object Shape12: TShape
+      Left = 272
+      Height = 4
+      Top = 76
+      Width = 216
+      Pen.Style = psClear
+    end
+    object labelTie: TLabel
+      Left = 367
+      Height = 44
+      Top = 85
+      Width = 15
+      Caption = '0'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = 16448250
+      Font.Height = -37
+      Font.Name = 'Bebas Neue'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      ParentColor = False
+      ParentFont = False
+    end
+    object lScoreP2: TLabel
+      Left = 584
+      Height = 44
+      Top = 85
+      Width = 15
+      Caption = '0'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = 16448250
+      Font.Height = -37
+      Font.Name = 'Bebas Neue'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      ParentColor = False
+      ParentFont = False
+    end
+    object labelP2: TLabel
+      Left = 568
+      Height = 59
+      Top = 16
+      Width = 47
+      Caption = 'PC'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = 16448250
+      Font.Height = -59
+      Font.Name = 'Mission Script'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      ParentColor = False
+      ParentFont = False
+    end
+    object Shape13: TShape
+      Left = 552
+      Height = 4
+      Top = 76
+      Width = 80
+      Pen.Style = psClear
+    end
+    object Button1: TButton
+      Left = 592
+      Height = 49
+      Top = 520
+      Width = 91
+      Caption = 'reset'
+      Font.CharSet = ANSI_CHARSET
+      Font.Height = -27
+      Font.Name = 'DK Running Hipster'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      OnClick = Button1Click
+      ParentFont = False
+      TabOrder = 0
+      Visible = False
+    end
+    object btnVoltarMenu: TButton
+      Left = 8
+      Height = 57
+      Top = 511
+      Width = 107
+      Caption = 'voltar'
+      Font.CharSet = ANSI_CHARSET
+      Font.Height = -32
+      Font.Name = 'Bebas Neue'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      OnClick = btnVoltarMenuClick
+      ParentFont = False
+      TabOrder = 1
+    end
+    object btnBusca: TButton
+      Left = 0
+      Height = 25
+      Top = 306
+      Width = 75
+      Caption = 'only--debug'
+      Font.CharSet = ANSI_CHARSET
+      Font.Height = -53
+      Font.Name = 'DK Running Hipster'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      OnMouseDown = btnBuscaMouseDown
+      ParentFont = False
+      TabOrder = 2
+      Visible = False
+    end
+  end
+  object panelOptions: TPanel
+    Left = 999
+    Height = 600
+    Top = 0
+    Width = 689
+    BevelOuter = bvNone
+    ClientHeight = 600
+    ClientWidth = 689
+    TabOrder = 2
+    Visible = False
+    object Label10: TLabel
+      Left = 176
+      Height = 59
+      Top = 40
+      Width = 353
+      Caption = 'vc esta nas opcoes'
+      Font.Height = -43
+      ParentColor = False
+      ParentFont = False
+    end
+    object ComboBox1: TComboBox
+      Left = 136
+      Height = 23
+      Top = 186
+      Width = 100
+      ItemHeight = 15
+      Style = csDropDownList
+      TabOrder = 0
+    end
+    object Button2: TButton
+      Left = 568
+      Height = 25
+      Top = 536
+      Width = 75
+      Caption = 'voltar'
+      OnClick = Button2Click
+      TabOrder = 1
+    end
+  end
+  object Timer1: TTimer
+    Interval = 5
+    OnTimer = Timer1Timer
+    left = 16
+    top = 560
+  end
+end
